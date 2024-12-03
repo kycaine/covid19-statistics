@@ -21,9 +21,14 @@ def clean_and_filter_data(file_path, valid_countries, threshold=80):
         df['country'] = df['country'].apply(lambda x: find_closest_country(x, valid_countries))
 
         numeric_fields = ['confirmed_cases', 'deaths', 'recoveries', 'total_confirmed', 'total_deaths', 'total_recoveries']
+        
+        df['valid_cases'] = (df['deaths'] + df['recoveries'] == df['confirmed_cases']) & \
+                             (df['total_deaths'] + df['total_recoveries'] == df['total_confirmed'])
+
         valid_df = df[(
             df['country'].notna() &  
-            df[numeric_fields].ge(0).all(axis=1
+            df[numeric_fields].ge(0).all(axis=1) &
+            df['valid_cases']
         )]
 
         invalid_df = df[~df.index.isin(valid_df.index)]
