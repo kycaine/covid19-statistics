@@ -1,0 +1,26 @@
+# Exclude Python cache directories
+__pycache__/
+*.py[cod]
+
+# Exclude virtual environment directories
+env/
+venv/
+
+# Exclude Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Exclude other Python-related temporary files
+*.pyo
+*.log
+*.sqlite3
+
+# Exclude IDE-specific files (optional)
+.vscode/
+.idea/
+
+# Exclude system-specific files (optional)
+.DS_Store
+Thumbs.db
+
+
+output
