@@ -45,13 +45,17 @@ def clean_and_filter_data(file_path, output_dir, valid_countries, threshold=80):
             )
         ]
         
-        valid_output_file = os.path.join(output_dir, 'valid_filtered_covid19_data.csv')
-        invalid_output_file = os.path.join(output_dir, 'invalid_filtered_covid19_data.csv')
+        valid_output_csv = os.path.join(output_dir, 'valid_filtered_covid19_data.csv')
+        valid_df.to_csv(valid_output_csv, index=False)
+        # valid_output_excel = os.path.join(output_dir, 'valid_filtered_covid19_data.xlsx')
+        # valid_df.to_excel(valid_output_excel, index=False)
+        print(f"Filtered valid data saved to {output_dir}")
         
-        valid_df.to_csv(valid_output_file, index=False)
-        print(f"Filtered valid data saved to {valid_output_file}")
         
-        invalid_df.to_csv(invalid_output_file, index=False)
-        print(f"Filtered invalid data saved to {invalid_output_file}")
+        invalid_output_csv = os.path.join(output_dir, 'invalid_filtered_covid19_data.csv')
+        invalid_df.to_csv(invalid_output_csv, index=False)
+        # invalid_output_excel = os.path.join(output_dir, 'invalid_filtered_covid19_data.xlsx')
+        # invalid_df.to_excel(invalid_output_excel, index=False)
+        print(f"Filtered invalid data saved to {output_dir}")
         
         return valid_df, invalid_df
