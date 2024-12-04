@@ -6,6 +6,7 @@
 1. data cleaning
 2. eda
 3. feature engineering
+4. modeling
 
 # success if?
 The process is successful when the output folder is created.
