@@ -11,6 +11,10 @@ Run the .ipynb files in the notebook folder in the following order:
 5. model evaluation
 6. model optimization
 
+or 
+
+run "run_notebooks.py" it will automatically run all notebooks
+
 Success if?
 The process is successful when the output folder is created.
 
