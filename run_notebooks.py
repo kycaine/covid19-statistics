@@ -5,7 +5,9 @@ notebooks = [
     'notebook/data_cleaning.ipynb',
     'notebook/eda.ipynb',
     'notebook/feature_engineering.ipynb',
-    'notebook/modeling.ipynb'
+    'notebook/modeling.ipynb',
+    'notebook/model_evaluation.ipynb',
+    'notebook/model_optimization.ipynb',
 ]
 
 def run_notebook(notebook_path):
