@@ -1,5 +1,6 @@
 import subprocess
 import os
+import asyncio
 
 notebooks = [
     'notebook/data_cleaning.ipynb',
@@ -10,7 +11,12 @@ notebooks = [
     'notebook/model_optimization.ipynb',
 ]
 
-def run_notebook(notebook_path):
+models = [
+    'model/train.py',
+    'model/predict.py'
+]
+
+def notebook_command(notebook_path):
     """Runs a Jupyter notebook using nbconvert."""
     command = [
         'jupyter', 'nbconvert', '--to', 'notebook', '--execute',
@@ -18,8 +24,24 @@ def run_notebook(notebook_path):
     ]
     subprocess.run(command, check=True)
 
-if __name__ == "__main__":
+def deeplearning_command(model):
+    comand = [
+        'python', model
+    ]
+    subprocess.run(comand, check=True)
+    
+def run_notebook(notebooks):
     for notebook in notebooks:
         print(f"Running {notebook}...")
-        run_notebook(notebook)
+        notebook_command(notebook)
         print(f"{notebook} finished.\n")
+        
+def run_deeplearning(models):
+    for model in models:
+        print(f"Running {model}...")
+        deeplearning_command(model)
+        print(f"{model} finished.\n")
+
+if __name__ == "__main__":
+    run_notebook(notebooks)
+    run_deeplearning(models)

@@ -5,7 +5,10 @@ import torch.nn as nn
 import torch.optim as optim
 from covid_model import CovidPredictor
 
-csv_path = "../output/feature_engineering/covid_feature_engineered.csv"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 
+
+csv_path = os.path.join(BASE_DIR, "output", "3.feature_engineering", "covid_feature_engineered.csv")
+
 if not os.path.exists(csv_path):
     raise FileNotFoundError(f"❌ File {csv_path} tidak ditemukan!")
 
@@ -36,7 +39,9 @@ for epoch in range(epochs):
     if (epoch+1) % 10 == 0:
         print(f"Epoch [{epoch+1}/{epochs}], Loss: {loss.item():.4f}")
 
-os.makedirs("output", exist_ok=True)
+model_dir = os.path.join(BASE_DIR, "output", "deep_learning")
+os.makedirs(model_dir, exist_ok=True)
+model_path = os.path.join(model_dir, "covid_model.pth")
 
-torch.save(model.state_dict(), "output/covid_model.pth")
-print("✅ Model berhasil disimpan di `output/covid_model.pth`")
+torch.save(model.state_dict(), model_path)
+print(f"✅ Model berhasil disimpan di `{model_path}`")
