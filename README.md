@@ -23,23 +23,47 @@ The process is successful when the output folder is created.
 
 # I/O
 
-1. data cleaning
-   - input : raw data (dir. data)
-   - output : cleaned data (dir. output/data_cleaning)
-2. eda
-   - input : output from data data cleaning (dir. output/data_cleaning)
-   - output : visualization data statistics (dir. output/eda)
-3. feature engineering
-   - input : output from data data cleaning (dir. output/data_cleaning)
-   - output : transformed feature for enhance model (dir. output/feature_enginnering)
-4. modeling
-   - input : output from feature enginnering (dir. output/feature_enginnering)
-   - output : the predictions (dir. output/modeling)
-5. model evaluation
-   - input : the predictions from modeling (dir. output/modeling)
-   - output : assesment performance of machine learning (dir. output/model_evaluationn)
-6. model optimization
-   - input:
-     - output from model evaluation (dir. output/model_evaluation)
-     - the predictions from modeling (dir. output/modeling)
-   - output : optimization performance from model evaluation (dir. output/model_optimization)
+1. Data Cleaning
+
+   - Input : Raw data (dir. data)
+   - Output : Cleaned data (dir. output/data_cleaning)
+
+2. Exploratory Data Analysis (EDA)
+
+   - Input : Output from data cleaning (dir. output/data_cleaning)
+   - Output : Visualization & data statistics (dir. output/eda)
+
+3. Feature Engineering
+
+   - Input : Output from data cleaning (dir. output/data_cleaning)
+   - Output : Transformed features to enhance the model (dir. output/feature_engineering)
+
+4. Modeling
+
+   - Input : Output from feature engineering (dir. output/feature_engineering)
+   - Output : The predictions (dir. output/modeling)
+
+5. Model Evaluation
+
+   - Input : The predictions from modeling (dir. output/modeling)
+   - Output : Assessment of model performance (dir. output/model_evaluation)
+
+6. Model Optimization
+   - Input:
+     - Output from model evaluation (dir. output/model_evaluation)
+     - The predictions from modeling (dir. output/modeling)
+   - Output : Optimized model performance (dir. output/model_optimization)
+
+# End-to-End ML Process
+
+1. Data Cleaning → Removes noise, handles missing values, and corrects errors in the dataset.
+
+2. Exploratory Data Analysis (EDA) → Visualizes and analyzes data patterns to gain insights.
+
+3. Feature Engineering → Creates new features or transforms existing ones to improve model performance.
+
+4. Modeling → Trains a machine learning model using the processed data.
+
+5. Model Evaluation → Measures model performance using metrics such as MAE, RMSE, R², or accuracy.
+
+6. Model Optimization → Enhances model performance through hyperparameter tuning or other optimization techniques.
